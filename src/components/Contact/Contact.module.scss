@@ -1,0 +1,90 @@
+.contactCard {
+	display: flex;
+	background: #202123;
+	box-shadow: 0px 20px 30px -18px rgba(0, 0, 0, 0.25);
+	border-radius: 16px;
+	padding: 24px;
+	height: 144px;
+	width: 1110px;
+	margin: 0 30px 16px;
+	&__main {
+		margin-left: 16px;
+		width: 100%;
+		.header {
+			display: flex;
+			justify-content: space-between;
+			&__contact {
+				display: flex;
+				flex-direction: column;
+				.name {
+					font-family: "Nunito";
+					font-style: normal;
+					font-weight: 600;
+					font-size: 18px;
+					line-height: 25px;
+					color: #ffffff;
+					margin-bottom: 6px;
+				}
+				.title {
+					padding: 7px 14px;
+					width: 119px;
+					height: 30px;
+					display: flex;
+					background: #38383b;
+					border-radius: 8px;
+					justify-content: center;
+					p {
+						align-self: center;
+						color: #ffffff;
+						font-family: "Nunito";
+						font-size: 14px;
+						font-style: normal;
+						font-weight: 400;
+						line-height: 16px;
+					}
+				}
+			}
+			.iconGroup {
+				display: flex;
+			}
+		}
+		hr {
+			margin: 16px 0 15px;
+			border: 1px solid #2f2f30;
+		}
+		.footer {
+			display: flex;
+		}
+	}
+}
+
+.contactDetail {
+	display: flex;
+	max-width: 157px;
+	height: 44px;
+	margin-right: 66px;
+	.container {
+		display: flex;
+		flex-direction: column;
+		height: 44px;
+		margin-left: 14px;
+		.title {
+			font-family: "Nunito";
+			font-style: normal;
+			font-weight: 700;
+			font-size: 13px;
+			line-height: 18px;
+			text-transform: uppercase;
+			color: #9e9e9e;
+			margin-bottom: 5px;
+		}
+		.details {
+			font-family: "Nunito";
+			font-style: normal;
+			font-weight: 400;
+			font-size: 15px;
+			line-height: 20px;
+			color: #e8e8e8;
+		}
+	}
+}

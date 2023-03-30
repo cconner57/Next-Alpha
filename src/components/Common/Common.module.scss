@@ -1,0 +1,86 @@
+.icon {
+	width: 48px;
+	height: 48px;
+	background-color: hsl(240, 2%, 20%);
+	border-radius: 14px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 16px;
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out;
+	&:hover {
+		background-color: hsl(240, 2%, 30%);
+	}
+}
+
+.button__primary {
+	align-self: center;
+	background: hsl(209, 100%, 59%);
+	border-radius: 14px;
+	border: 1px solid hsl(220, 4%, 13%);
+	box-shadow: 0px 4px 16px rgba(0, 129, 255, 0.25);
+	color: hsl(0, 0%, 100%);
+	cursor: pointer;
+	font-family: "Nunito", sans-serif;
+	font-size: 0.9375rem;
+	font-style: normal;
+	font-weight: 600;
+	height: 48px;
+	line-height: 1.25rem;
+	text-align: center;
+}
+
+.button__secondary {
+	align-self: center;
+	background: hsl(240, 2%, 20%);
+	border-radius: 14px;
+	border: 1px solid hsl(220, 4%, 13%);
+	box-shadow: 0px 4px 16px rgba(0, 129, 255, 0.25);
+	color: hsl(0, 0%, 100%);
+	cursor: pointer;
+	font-family: "Nunito", sans-serif;
+	font-size: 0.9375rem;
+	font-style: normal;
+	font-weight: 600;
+	height: 48px;
+	line-height: 1.25rem;
+	text-align: center;
+}
+
+.button__delete {
+	align-self: center;
+	background: hsl(12, 100%, 63%);
+	border-radius: 14px;
+	border: 1px solid hsl(220, 4%, 13%);
+	box-shadow: 0px 4px 16px rgba(255, 102, 64, 0.18);
+	color: hsl(0, 0%, 100%);
+	cursor: pointer;
+	font-family: "Nunito", sans-serif;
+	font-size: 0.9375rem;
+	font-style: normal;
+	font-weight: 600;
+	height: 48px;
+	line-height: 1.25rem;
+	text-align: center;
+}
+
+.button__extraSmall {
+	height: 40px;
+	width: 94px;
+}
+
+.button__small {
+	height: 48px;
+	width: 158px;
+}
+
+.button__medium {
+	height: 48px;
+	width: 548px;
+}
+
+.button__large {
+	height: 48px;
+	width: 548px;
+}
