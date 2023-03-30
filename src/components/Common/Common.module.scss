@@ -84,3 +84,38 @@
 	height: 48px;
 	width: 548px;
 }
+
+.toggleView {
+	max-width: 104px;
+	max-height: 48px;
+	background: #313133;
+	border-radius: 14px;
+	padding: 4px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	.active {
+		width: 48px;
+		height: 40px;
+		background: linear-gradient(180deg, #46464a 83.86%, #38383b 100%);
+		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.04);
+		border-radius: 12px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		img {
+			filter: brightness(0) saturate(100%) invert(52%) sepia(22%)
+				saturate(4882%) hue-rotate(188deg) brightness(100%) contrast(102%);
+		}
+	}
+	.inactive {
+		width: 48px;
+		height: 40px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+	}
+}

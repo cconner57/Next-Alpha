@@ -1,13 +1,12 @@
 import { Button } from "@/components/Common/Button";
-import { ContactCard } from "@/components/Contact/ContactCard";
-import Image from "next/image";
+import { ContactCard, ContactGrid } from "@/components/Contact";
 import { useState } from "react";
-import { grid, list } from "../../public/Icons";
+import { ToggleView } from "@/components/Common/ToggleView";
 
 const Contacts = () => {
-	const [viewToggle, setViewToggle] = useState<"grid" | "list">("list");
+	const [viewToggle, setViewToggle] = useState<"grid" | "list">("grid");
 	return (
-		<main style={{ backgroundColor: "#151517" }}>
+		<main style={{ backgroundColor: "#151517", padding: '0 30px' }}>
 			<div style={{ display: "flex", justifyContent: "space-between" }}>
 				<h2
 					style={{
@@ -19,111 +18,67 @@ const Contacts = () => {
 						display: "flex",
 						alignItems: "center",
 						color: "#FFFFFF",
-						margin: "32px 30px",
+						margin: "32px 0",
 					}}>
 					Contacts
 				</h2>
 				<div style={{ display: "flex", gap: "16px", margin: "30px" }}>
-					<div
-						style={{
-							maxWidth: "104px",
-							maxHeight: "48px",
-							background: "#313133",
-							borderRadius: "14px",
-							padding: "4px",
-							display: "flex",
-							justifyContent: "center",
-							alignItems: "center",
-							gap: "10px",
-						}}>
-						<div
-							onClick={() => setViewToggle("grid")}
-							style={
-								viewToggle === "grid"
-									? {
-											width: "48px",
-											height: "40px",
-
-											background:
-												"linear-gradient(180deg, #46464A 83.86%, #38383B 100%)",
-											boxShadow:
-												"0px 4px 8px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.04)",
-											borderRadius: "12px",
-											display: "flex",
-											justifyContent: "center",
-											alignItems: "center",
-											cursor: "pointer",
-									  }
-									: {
-											width: "48px",
-											height: "40px",
-											display: "flex",
-											justifyContent: "center",
-											alignItems: "center",
-											cursor: "pointer",
-									  }
-							}>
-							<Image
-								width={20}
-								height={20}
-								src={grid}
-								alt="grid"
-								style={
-									viewToggle === "grid"
-										? {
-												filter:
-													"brightness(0) saturate(100%) invert(52%) sepia(22%) saturate(4882%) hue-rotate(188deg) brightness(100%) contrast(102%)",
-										  }
-										: {}
-								}
-							/>
-						</div>
-						<div
-							onClick={() => setViewToggle("list")}
-							style={
-								viewToggle === "list"
-									? {
-											width: "48px",
-											height: "40px",
-
-											background:
-												"linear-gradient(180deg, #46464A 83.86%, #38383B 100%)",
-											boxShadow:
-												"0px 4px 8px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.04)",
-											borderRadius: "12px",
-											display: "flex",
-											justifyContent: "center",
-											alignItems: "center",
-											cursor: "pointer",
-									  }
-									: {
-											width: "48px",
-											height: "40px",
-											display: "flex",
-											justifyContent: "center",
-											alignItems: "center",
-											cursor: "pointer",
-									  }
-							}>
-							<Image
-								width={16}
-								height={16}
-								src={list}
-								alt="list"
-								style={
-									viewToggle === "list"
-										? {
-												filter:
-													"brightness(0) saturate(100%) invert(52%) sepia(22%) saturate(4882%) hue-rotate(188deg) brightness(100%) contrast(102%)",
-										  }
-										: {}
-								}
-							/>
-						</div>
-					</div>
+					<ToggleView viewToggle={viewToggle} setViewToggle={setViewToggle} />
 					<Button variant="primary" text="+ Add Contact" />
 				</div>
 			</div>
+			{viewToggle === "grid" && (
+				<div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: '30px' }}>
+					<ContactGrid
+						name="John Smith"
+						title="Creative Director"
+						email="cooper@mail.com"
+						phoneNumber="+123-4567-8800"
+					/>
+					<ContactGrid
+						name="John Smith"
+						title="Creative Director"
+						email="cooper@mail.com"
+						phoneNumber="+123-4567-8800"
+					/>
+					<ContactGrid
+						name="John Smith"
+						title="Creative Director"
+						email="cooper@mail.com"
+						phoneNumber="+123-4567-8800"
+					/>
+					<ContactGrid
+						name="John Smith"
+						title="Creative Director"
+						email="cooper@mail.com"
+						phoneNumber="+123-4567-8800"
+					/>
+					<ContactGrid
+						name="John Smith"
+						title="Creative Director"
+						email="cooper@mail.com"
+						phoneNumber="+123-4567-8800"
+					/>
+					<ContactGrid
+						name="John Smith"
+						title="Creative Director"
+						email="cooper@mail.com"
+						phoneNumber="+123-4567-8800"
+					/>
+					<ContactGrid
+						name="John Smith"
+						title="Creative Director"
+						email="cooper@mail.com"
+						phoneNumber="+123-4567-8800"
+					/>
+					<ContactGrid
+						name="John Smith"
+						title="Creative Director"
+						email="cooper@mail.com"
+						phoneNumber="+123-4567-8800"
+					/>
+				</div>
+			)}
 			{viewToggle === "list" && (
 				<>
 					<ContactCard
