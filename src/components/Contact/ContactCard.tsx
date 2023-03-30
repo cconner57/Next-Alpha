@@ -1,12 +1,12 @@
 import Image from "next/image";
-import { avatar } from "../../../public";
+import { avatar1_40 } from "../../../public/Avatars";
 import {
 	calendar,
 	ellipsis,
 	location,
 	mail,
 	phone,
-	video,
+	video
 } from "../../../public/Icons";
 import { Icon } from "../Common/Icon";
 import { ContactDetail } from "./ContactDetail";
@@ -34,7 +34,7 @@ export const ContactCard = ({
 }: ContactCardProps) => {
 	return (
 		<div className={styles.contactCard}>
-			<Image width={64} height={64} src={profileImage || avatar} alt="avatar" />
+			<Image width={64} height={64} src={profileImage || avatar1_40} alt="avatar" />
 			<div className={styles.contactCard__main}>
 				<div className={styles.header}>
 					<div className={styles.header__contact}>

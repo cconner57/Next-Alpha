@@ -2,15 +2,28 @@ import { Button } from "@/components/Common/Button";
 import { ContactCard } from "@/components/Contact/ContactCard";
 import Image from "next/image";
 import { useState } from "react";
-import { grid, list } from "../../public";
+import { grid, list } from "../../public/Icons";
 
 const Contacts = () => {
-	const [viewToggle, setViewToggle] = useState<"grid" | "list">("grid");
+	const [viewToggle, setViewToggle] = useState<"grid" | "list">("list");
 	return (
-		<main>
+		<main style={{ backgroundColor: "#151517" }}>
 			<div style={{ display: "flex", justifyContent: "space-between" }}>
-				<h2>Contacts</h2>
-				<div style={{ display: "flex" }}>
+				<h2
+					style={{
+						fontFamily: "Nunito",
+						fontStyle: "normal",
+						fontWeight: "700",
+						fontSize: "32px",
+						lineHeight: "44px",
+						display: "flex",
+						alignItems: "center",
+						color: "#FFFFFF",
+						margin: "32px 30px",
+					}}>
+					Contacts
+				</h2>
+				<div style={{ display: "flex", gap: "16px", margin: "30px" }}>
 					<div
 						style={{
 							maxWidth: "104px",
@@ -24,6 +37,7 @@ const Contacts = () => {
 							gap: "10px",
 						}}>
 						<div
+							onClick={() => setViewToggle("grid")}
 							style={
 								viewToggle === "grid"
 									? {
@@ -54,16 +68,18 @@ const Contacts = () => {
 								height={20}
 								src={grid}
 								alt="grid"
-								onClick={() => setViewToggle("grid")}
-								style={viewToggle === "grid"
-								? {
-										filter:
-											"brightness(0) saturate(100%) invert(52%) sepia(22%) saturate(4882%) hue-rotate(188deg) brightness(100%) contrast(102%)",
-								  }
-								: {}}
+								style={
+									viewToggle === "grid"
+										? {
+												filter:
+													"brightness(0) saturate(100%) invert(52%) sepia(22%) saturate(4882%) hue-rotate(188deg) brightness(100%) contrast(102%)",
+										  }
+										: {}
+								}
 							/>
 						</div>
 						<div
+							onClick={() => setViewToggle("list")}
 							style={
 								viewToggle === "list"
 									? {
@@ -94,7 +110,6 @@ const Contacts = () => {
 								height={16}
 								src={list}
 								alt="list"
-								onClick={() => setViewToggle("list")}
 								style={
 									viewToggle === "list"
 										? {
@@ -106,10 +121,10 @@ const Contacts = () => {
 							/>
 						</div>
 					</div>
-					<Button variant='primary' text="+ Add Contact" />
+					<Button variant="primary" text="+ Add Contact" />
 				</div>
 			</div>
-			{viewToggle === "grid" && (
+			{viewToggle === "list" && (
 				<>
 					<ContactCard
 						name="Mitchell Cooper"
