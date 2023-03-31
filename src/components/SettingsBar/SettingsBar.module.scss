@@ -1,0 +1,39 @@
+.settingsBar {
+	background-color: hsl(240, 5%, 9%);
+	border: 1px solid hsl(240, 1%, 14%);
+	display: flex;
+	justify-content: space-between;
+	padding: 30px 29px;
+	width: 90.5vw;
+	.actions {
+		align-items: center;
+		display: flex;
+		height: 40px;
+		margin-right: 20px;
+		width: 158px;
+		img {
+			cursor: pointer;
+			transition: filter 0.2s ease-in-out, rotate 0.2s ease-in-out,
+				scale 0.2s ease-in-out;
+		}
+		img:first-child:hover {
+			rotate: 90deg;
+			filter: brightness(1.5);
+		}
+		img:nth-child(2) {
+			margin: 0 21px 0 28px;
+			&:hover {
+				scale: 1.2;
+				filter: brightness(2.5);
+			}
+		}
+		div {
+			width: 2px;
+			height: 40px;
+			border: 1px solid hsl(240, 1%, 14%);
+		}
+		img:last-child {
+			margin-left: 24px;
+		}
+	}
+}

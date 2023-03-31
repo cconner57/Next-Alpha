@@ -5,8 +5,7 @@
 	border-radius: 16px;
 	padding: 24px;
 	height: 144px;
-	width: 1110px;
-	margin: 0 30px 16px;
+	margin: 0 30px 16px 0;
 	&__main {
 		margin-left: 16px;
 		width: 100%;
@@ -59,7 +58,7 @@
 }
 
 .contactGrid {
-	width: 300px;
+	width: 265px;
 	height: 460px;
 	background: #202123;
 	box-shadow: 0px 20px 30px -18px rgba(0, 0, 0, 0.25);
@@ -69,6 +68,7 @@
 	align-items: center;
 	padding: 19px 24px 28px;
 	img:first-child {
+		cursor: pointer;
 		margin-left: auto;
 	}
 	.name {
@@ -111,22 +111,27 @@
 		margin-top: 18px;
 	}
 	.message {
+		align-items: center;
+		background-color: hsl(240, 3%, 23%);
+		border-radius: 8px;
+		cursor: pointer;
+		display: flex;
+		height: 48px;
+		justify-content: center;
 		margin-top: 24px;
 		padding: 7px 14px;
-		width: 252px;
-		height: 48px;
-		display: flex;
-		background: hsl(240, 3%, 23%);
-		border-radius: 8px;
-		justify-content: center;
-		align-items: center;
+		transition: background-color 0.2s ease-in-out;
+		width: 210px;
 		p {
+			color: hsl(0, 0%, 100%);
 			font-family: "Nunito";
+			font-size: 20px;
 			font-style: normal;
 			font-weight: 600;
-			font-size: 20px;
 			line-height: 20px;
-			color: hsl(0, 0%, 100%);
+		}
+		&:hover {
+			background-color: hsl(240, 3%, 33%);
 		}
 	}
 }

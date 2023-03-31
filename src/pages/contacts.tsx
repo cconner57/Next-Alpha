@@ -6,7 +6,12 @@ import { ToggleView } from "@/components/Common/ToggleView";
 const Contacts = () => {
 	const [viewToggle, setViewToggle] = useState<"grid" | "list">("grid");
 	return (
-		<main style={{ backgroundColor: "#151517", padding: '0 30px' }}>
+		<main
+			style={{
+				backgroundColor: "#151517",
+				padding: "0 30px",
+				width: "90.5 vw",
+			}}>
 			<div style={{ display: "flex", justifyContent: "space-between" }}>
 				<h2
 					style={{
@@ -28,7 +33,12 @@ const Contacts = () => {
 				</div>
 			</div>
 			{viewToggle === "grid" && (
-				<div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: '30px' }}>
+				<div
+					style={{
+						display: "grid",
+						gridTemplateColumns: "repeat(4, 1fr)",
+						gridGap: "20px",
+					}}>
 					<ContactGrid
 						name="John Smith"
 						title="Creative Director"
