@@ -30,8 +30,16 @@ import tasks from "./Tasks.svg";
 import tasks2 from "./Tasks2.svg";
 import tasks3 from "./Tasks3.svg";
 import video from "./Video.svg";
+import filter from "./Filter.svg";
+import filter2 from "./Filter2.svg";
+import filter3 from "./Filter3.svg";
+import pushpin from "./Pushpin.svg";
 
 export {
+	pushpin,
+	filter,
+	filter2,
+	filter3,
 	arrowLeft,
 	calendar,
 	calendar2,

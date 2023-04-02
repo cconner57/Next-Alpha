@@ -50,6 +50,7 @@ export const NavBar = ({ currentTab, setCurrentTab }: NavBarProps) => {
 	) => {
 		router.push(`/${tab}`);
 		setCurrentTab(tab);
+		localStorage.setItem("currentTab", tab);
 	};
 
 	return (
