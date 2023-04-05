@@ -1,34 +1,7 @@
-.contactsPage {
-	background-color: #151517;
-	padding: 0 30px;
-	width: 90.5vw;
-	overflow: auto;
-	height: 88.2vh;
-	.header {
-		display: flex;
-		justify-content: space-between;
-		h2 {
-			font-family: "Nunito";
-			font-style: normal;
-			font-weight: 700;
-			font-size: 32px;
-			line-height: 44px;
-			display: flex;
-			align-items: center;
-			color: #ffffff;
-			margin: 32px 0;
-		}
-		.actions {
-			display: flex;
-			gap: 16px;
-			margin: 30px;
-		}
-	}
-	.bodyGrid {
-		display: grid;
-		grid-template-columns: repeat(4, 1fr);
-		grid-gap: 20px;
-	}
+.bodyGrid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 20px;
 }
 
 .contactCard {
@@ -59,7 +32,7 @@
 				}
 				.title {
 					padding: 7px 14px;
-					width: 119px;
+					width: 125px;
 					height: 30px;
 					display: flex;
 					background: #38383b;
@@ -117,7 +90,7 @@
 	.title {
 		margin: 10px 0 10px;
 		padding: 7px 14px;
-		width: 119px;
+		width: 135px;
 		height: 30px;
 		display: flex;
 		background: hsl(240, 3%, 23%);

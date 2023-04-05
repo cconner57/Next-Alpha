@@ -129,3 +129,33 @@
 	left: -88px;
 	background: hsla(240, 5%, 9%, 0.7);
 }
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	h2 {
+		font-family: "Nunito";
+		font-style: normal;
+		font-weight: 700;
+		font-size: 32px;
+		line-height: 44px;
+		display: flex;
+		align-items: center;
+		color: #ffffff;
+		margin: 32px 0;
+	}
+	.actions {
+		display: flex;
+		gap: 16px;
+		margin: 30px;
+	}
+}
+
+.page {
+	background-color: #151517;
+	padding: 0 30px;
+	width: 90.5vw;
+	overflow: auto;
+	height: 88.2vh;
+	position: relative;
+}

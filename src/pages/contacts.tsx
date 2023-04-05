@@ -1,21 +1,17 @@
-import { Button } from "@/components/Common/Button";
+import { Header, Page } from "@/components/Common";
 import { ToggleView } from "@/components/Common/ToggleView";
 import { ContactCard, ContactGrid } from "@/components/Contact";
 import { contactsData } from "@/data/contacts";
+import styles from "@/styles/Contacts.module.scss";
 import { useState } from "react";
-import styles from "../styles/Contacts.module.scss";
 
 const Contacts = () => {
 	const [viewToggle, setViewToggle] = useState<"grid" | "list">("grid");
 	return (
-		<main className={styles.contactsPage}>
-			<div className={styles.header} style={{}}>
-				<h2>Contacts</h2>
-				<div className={styles.actions}>
-					<ToggleView viewToggle={viewToggle} setViewToggle={setViewToggle} />
-					<Button variant="primary" text="+ Add Contact" />
-				</div>
-			</div>
+		<Page>
+			<Header title="Contacts" buttonText="+ Add Contact">
+				<ToggleView viewToggle={viewToggle} setViewToggle={setViewToggle} />
+			</Header>
 			{viewToggle === "grid" && (
 				<div className={styles.bodyGrid}>
 					{contactsData.map((contact) => (
@@ -44,7 +40,7 @@ const Contacts = () => {
 					))}
 				</>
 			)}
-		</main>
+		</Page>
 	);
 };
 

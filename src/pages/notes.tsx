@@ -1,12 +1,11 @@
-import { Button } from "@/components/Common/Button";
-import { Modal } from "@/components/Common/Modal";
+import { Header, Modal, Page } from "@/components/Common";
 import { NoteItem, ViewNote } from "@/components/Notes";
+import styles from "@/styles/Notes.module.scss";
 import { Note, NoteModal } from "@/types/notes";
 import Image from "next/image";
 import { useState } from "react";
 import { filter3 } from "../../public/Icons";
 import { notesData } from "../data/notes";
-import styles from "../styles/Notes.module.scss";
 
 const Notes = () => {
 	const [openModal, setOpenModal] = useState<NoteModal>({
@@ -29,16 +28,12 @@ const Notes = () => {
 	};
 
 	return (
-		<main className={styles.notesPage}>
-			<div className={styles.header}>
-				<h2>Notes</h2>
-				<div className={styles.actions}>
-					<div className={styles.filter}>
-						<Image width={20} height={20} src={filter3} alt="filter" />
-					</div>
-					<Button variant="primary" text="+ Add Note" />
+		<Page>
+			<Header title="Notes" buttonText="+ Add Note">
+				<div className={styles.filter}>
+					<Image width={20} height={20} src={filter3} alt="filter" />
 				</div>
-			</div>
+			</Header>
 			<div className={styles.body}>
 				{notes.map((note: Note) => (
 					<NoteItem
@@ -64,7 +59,7 @@ const Notes = () => {
 					selectedNote={selectedNote}
 				/>
 			</Modal>
-		</main>
+		</Page>
 	);
 };
 

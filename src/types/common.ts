@@ -19,3 +19,13 @@ export interface ButtonProps {
 	variant: "primary" | "secondary";
 	size?: "small" | "medium" | "large";
 }
+
+export interface HeaderProps {
+	title: string;
+	buttonText: string;
+	children: React.ReactNode;
+}
+
+export interface PageProps {
+    children: React.ReactNode;
+}

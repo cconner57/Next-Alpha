@@ -1,3 +1,4 @@
+import { NavBarProps, TabState } from "@/types/navbar";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { logo } from "../../../public/Avatars";
@@ -11,46 +12,17 @@ import {
 	mail2,
 	notes,
 	project2,
-	tasks3
+	tasks3,
 } from "../../../public/Icons";
 import styles from "./NavBar.module.scss";
-
-interface NavBarProps {
-	currentTab: string;
-	setCurrentTab: (
-		tab:
-			| "dashboard"
-			| "cart"
-			| "calendar"
-			| "mail"
-			| "chat"
-			| "tasks"
-			| "files"
-			| "notes"
-			| "contacts"
-			| "projects"
-	) => void;
-}
 
 export const NavBar = ({ currentTab, setCurrentTab }: NavBarProps) => {
 	const router = useRouter();
 
-	const changeRoutes = (
-		tab:
-			"dashboard"
-			| "cart"
-			| "calendar"
-			| "mail"
-			| "chat"
-			| "tasks"
-			| "files"
-			| "notes"
-			| "contacts"
-			| "projects"
-	) => {
+	const changeRoutes = (tab: TabState) => {
 		router.push(`/${tab}`);
 		setCurrentTab(tab);
-		localStorage.setItem("currentTab", tab);
+		localStorage.setItem("currentTab", tab.toString());
 	};
 
 	return (
@@ -64,80 +36,80 @@ export const NavBar = ({ currentTab, setCurrentTab }: NavBarProps) => {
 			/>
 			<div className={styles.navBar__links}>
 				<Image
-					className={`${currentTab === "dashboard" && styles.active}`}
-					onClick={() => changeRoutes("dashboard")}
+					className={`${currentTab === ("dashboard" as any) && styles.active}`}
+					onClick={() => changeRoutes("dashboard" as any)}
 					width={22}
 					height={22}
 					src={dashboard}
 					alt="dashboard"
 				/>
 				<Image
-					className={`${currentTab === "cart" && styles.active}`}
-					onClick={() => changeRoutes("cart")}
+					className={`${currentTab === ("cart" as any) && styles.active}`}
+					onClick={() => changeRoutes("cart" as any)}
 					width={22}
 					height={22}
 					src={cart}
 					alt="cart"
 				/>
 				<Image
-					className={`${currentTab === "calendar" && styles.active}`}
-					onClick={() => changeRoutes("calendar")}
+					className={`${currentTab === ("calendar" as any) && styles.active}`}
+					onClick={() => changeRoutes("calendar" as any)}
 					width={22}
 					height={22}
 					src={calendar2}
 					alt="calendar"
 				/>
 				<Image
-					className={`${currentTab === "mail" && styles.active}`}
-					onClick={() => changeRoutes("mail")}
+					className={`${currentTab === ("mail" as any) && styles.active}`}
+					onClick={() => changeRoutes("mail" as any)}
 					width={22}
 					height={22}
 					src={mail2}
 					alt="mail"
 				/>
 				<Image
-					className={`${currentTab === "chat" && styles.active}`}
-					onClick={() => changeRoutes("chat")}
+					className={`${currentTab === ("chat" as any) && styles.active}`}
+					onClick={() => changeRoutes("chat" as any)}
 					width={22}
 					height={22}
 					src={chat2}
 					alt="chat"
 				/>
 				<Image
-					className={`${currentTab === "tasks" && styles.active}`}
-					onClick={() => changeRoutes("tasks")}
+					className={`${currentTab === ("tasks" as any) && styles.active}`}
+					onClick={() => changeRoutes("tasks" as any)}
 					width={22}
 					height={22}
 					src={tasks3}
 					alt="tasks"
 				/>
 				<Image
-					className={`${currentTab === "projects" && styles.active}`}
-					onClick={() => changeRoutes("projects")}
+					className={`${currentTab === ("projects" as any) && styles.active}`}
+					onClick={() => changeRoutes("projects" as any)}
 					width={22}
 					height={22}
 					src={project2}
 					alt="project"
 				/>
 				<Image
-					className={`${currentTab === "files" && styles.active}`}
-					onClick={() => changeRoutes("files")}
+					className={`${currentTab === ("files" as any) && styles.active}`}
+					onClick={() => changeRoutes("files" as any)}
 					width={22}
 					height={22}
 					src={fileManager}
 					alt="file manager"
 				/>
 				<Image
-					className={`${currentTab === "notes" && styles.active}`}
-					onClick={() => changeRoutes("notes")}
+					className={`${currentTab === ("notes" as any) && styles.active}`}
+					onClick={() => changeRoutes("notes" as any)}
 					width={22}
 					height={22}
 					src={notes}
 					alt="notes"
 				/>
 				<Image
-					className={`${currentTab === "contacts" && styles.active}`}
-					onClick={() => changeRoutes("contacts")}
+					className={`${currentTab === ("contacts" as any) && styles.active}`}
+					onClick={() => changeRoutes("contacts" as any)}
 					width={22}
 					height={22}
 					src={contacts2}
