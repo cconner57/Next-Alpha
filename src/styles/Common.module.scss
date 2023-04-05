@@ -119,3 +119,13 @@
 		cursor: pointer;
 	}
 }
+
+.modal {
+	position: absolute;
+	z-index: 100;
+	width: 99.7vw;
+	height: 99.4vh;
+	top: -100px;
+	left: -88px;
+	background: hsla(240, 5%, 9%, 0.7);
+}

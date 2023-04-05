@@ -1,11 +1,5 @@
-import React from "react";
-import styles from "./Common.module.scss";
-
-interface ButtonProps {
-	text: string;
-	variant: "primary" | "secondary";
-	size?: "small" | "medium" | "large";
-}
+import styles from "@/styles/Common.module.scss";
+import { ButtonProps } from "@/types/common";
 
 export const Button = ({
 	variant = "primary",

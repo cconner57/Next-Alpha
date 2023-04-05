@@ -1,11 +1,7 @@
+import styles from "@/styles/Common.module.scss";
+import { ToggleViewProps } from "@/types/common";
 import Image from "next/image";
 import { grid, list2 } from "../../../public/Icons";
-import styles from "./Common.module.scss";
-
-interface ToggleViewProps {
-	viewToggle: string;
-	setViewToggle: (view: "grid" | "list") => void;
-}
 
 export const ToggleView = ({ viewToggle, setViewToggle }: ToggleViewProps) => {
 	return (

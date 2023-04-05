@@ -34,8 +34,16 @@ import filter from "./Filter.svg";
 import filter2 from "./Filter2.svg";
 import filter3 from "./Filter3.svg";
 import pushpin from "./Pushpin.svg";
+import alignLeft from "./Align-Left.svg";
+import x from "./X.svg";
+import deleteIcon from "./Delete.svg";
+import edit from "./Edit.svg";
 
 export {
+	x,
+	deleteIcon,
+	edit,
+	alignLeft,
 	pushpin,
 	filter,
 	filter2,

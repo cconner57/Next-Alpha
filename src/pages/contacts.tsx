@@ -1,7 +1,8 @@
 import { Button } from "@/components/Common/Button";
-import { ContactCard, ContactGrid } from "@/components/Contact";
-import { useState } from "react";
 import { ToggleView } from "@/components/Common/ToggleView";
+import { ContactCard, ContactGrid } from "@/components/Contact";
+import { contactsData } from "@/data/contacts";
+import { useState } from "react";
 
 const Contacts = () => {
 	const [viewToggle, setViewToggle] = useState<"grid" | "list">("grid");
@@ -39,98 +40,30 @@ const Contacts = () => {
 						gridTemplateColumns: "repeat(4, 1fr)",
 						gridGap: "20px",
 					}}>
-					<ContactGrid
-						name="John Smith"
-						title="Creative Director"
-						email="cooper@mail.com"
-						phoneNumber="+123-4567-8800"
-					/>
-					<ContactGrid
-						name="John Smith"
-						title="Creative Director"
-						email="cooper@mail.com"
-						phoneNumber="+123-4567-8800"
-					/>
-					<ContactGrid
-						name="John Smith"
-						title="Creative Director"
-						email="cooper@mail.com"
-						phoneNumber="+123-4567-8800"
-					/>
-					<ContactGrid
-						name="John Smith"
-						title="Creative Director"
-						email="cooper@mail.com"
-						phoneNumber="+123-4567-8800"
-					/>
-					<ContactGrid
-						name="John Smith"
-						title="Creative Director"
-						email="cooper@mail.com"
-						phoneNumber="+123-4567-8800"
-					/>
-					<ContactGrid
-						name="John Smith"
-						title="Creative Director"
-						email="cooper@mail.com"
-						phoneNumber="+123-4567-8800"
-					/>
-					<ContactGrid
-						name="John Smith"
-						title="Creative Director"
-						email="cooper@mail.com"
-						phoneNumber="+123-4567-8800"
-					/>
-					<ContactGrid
-						name="John Smith"
-						title="Creative Director"
-						email="cooper@mail.com"
-						phoneNumber="+123-4567-8800"
-					/>
+					{contactsData.map((contact) => (
+						<ContactGrid
+							key={contact.id}
+							name={contact.name}
+							title={contact.title}
+							email={contact.email}
+							phoneNumber={contact.phoneNumber}
+						/>
+					))}
 				</div>
 			)}
 			{viewToggle === "list" && (
 				<>
-					<ContactCard
-						name="Mitchell Cooper"
-						title="Creative Director"
-						email="cooper@mail.com"
-						phoneNumber="+123-4567-8800"
-						birthday="17 March, 1995"
-						address="New York, NY"
-					/>
-					<ContactCard
-						name="Judith Black"
-						title="Project Manager"
-						email="black@mail.com"
-						phoneNumber="+123-4567-8800"
-						birthday="17 March, 1995"
-						address="Paris, France"
-					/>
-					<ContactCard
-						name="Dustin Williamson"
-						title="UI/UX Designer"
-						email="dustin@mail.com"
-						phoneNumber="+123-4567-8800"
-						birthday="17 March, 1995"
-						address="Berlin, Germany"
-					/>
-					<ContactCard
-						name="Ronald Robertson"
-						title="Backend Developer"
-						email="robertson@mail.com"
-						phoneNumber="+123-4567-8800"
-						birthday="17 March, 1995"
-						address="Sydney, Australia"
-					/>
-					<ContactCard
-						name="Lily Williamson"
-						title="Project Manager"
-						email="lily@example.com"
-						phoneNumber="+123-4567-8800"
-						birthday="17 March, 1995"
-						address="Canada, Ottawa"
-					/>
+					{contactsData.map((contact) => (
+						<ContactCard
+							key={contact.id}
+							name={contact.name}
+							title={contact.title}
+							email={contact.email}
+							phoneNumber={contact.phoneNumber}
+							birthday={contact.birthday}
+							address={contact.address}
+						/>
+					))}
 				</>
 			)}
 		</main>

@@ -1,4 +1,4 @@
-import "@/styles/globals.css";
+import "@/styles/globals.scss";
 import type { AppProps } from "next/app";
 import { SettingsBar } from "@/components/SettingsBar/SettingsBar";
 import { NavBar } from "@/components/NavBar/NavBar";
@@ -6,7 +6,7 @@ import { useState } from "react";
 
 export default function App({ Component, pageProps }: AppProps) {
 	const [currentTab, setCurrentTab] = useState<
-		"dashboard"
+		| "dashboard"
 		| "cart"
 		| "calendar"
 		| "mail"

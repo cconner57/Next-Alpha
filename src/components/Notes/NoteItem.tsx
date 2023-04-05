@@ -1,14 +1,14 @@
 import Image from "next/image";
 import { useState } from "react";
 import { calendar, pushpin } from "../../../public/Icons";
+import { NoteItemProps } from "../../types/notes";
+import styles from "@/styles/Notes.module.scss";
 
-import styles from "./Note.module.scss";
-
-interface NoteItemProps {
-	pinned: boolean;
-}
-
-export const NoteItem = ({ pinned }: NoteItemProps) => {
+export const NoteItem = ({
+	note: { date, pinned, title, content },
+	toggleModal,
+	focusedNote,
+}: NoteItemProps) => {
 	const [toggleFilter, setToggleFilter] = useState<boolean>(pinned);
 
 	return (
@@ -18,7 +18,11 @@ export const NoteItem = ({ pinned }: NoteItemProps) => {
 				toggleFilter
 					? { backgroundColor: "#FFD073" }
 					: { backgroundColor: "#202123" }
-			}>
+			}
+			onClick={() => {
+				focusedNote();
+				toggleModal();
+			}}>
 			<div
 				className={styles.shadow}
 				style={
@@ -46,7 +50,7 @@ export const NoteItem = ({ pinned }: NoteItemProps) => {
 					<p
 						className={styles.image}
 						style={toggleFilter ? { color: "#28263B" } : { color: "#ffffff" }}>
-						June 13, 2021
+						{date}
 					</p>
 				</div>
 				<Image
@@ -55,21 +59,21 @@ export const NoteItem = ({ pinned }: NoteItemProps) => {
 					height={20}
 					src={pushpin}
 					alt="Pushpin"
-					onClick={() => setToggleFilter(!toggleFilter)}
+					onClick={(e) => {
+						e.stopPropagation();
+						setToggleFilter(!toggleFilter);
+					}}
 				/>
 			</div>
 			<h5
 				className={styles.title}
 				style={toggleFilter ? { color: "#1A1926" } : { color: "#ffffff" }}>
-				Title of the note
+				{title}
 			</h5>
 			<p
 				className={styles.content}
 				style={toggleFilter ? { color: "#28263B" } : { color: "#E8E8E8" }}>
-				Lorem ipsum dolor sit amet, ullamcous cididunt consectetur adipiscing
-				elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels
-				aliqua. Ut enim ad nesid utminim veniam, quis nostrud eiusmo
-				exercitation ullamco labori is amco commodo consequat seds eiusmod.
+				{content}
 			</p>
 		</div>
 	);

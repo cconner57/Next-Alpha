@@ -1,3 +1,4 @@
+import styles from "@/styles/Contact.module.scss";
 import Image from "next/image";
 import { avatar1_40 } from "../../../public/Avatars";
 import {
@@ -6,22 +7,11 @@ import {
 	location,
 	mail,
 	phone,
-	video
+	video,
 } from "../../../public/Icons";
+import { ContactCardProps } from "../../types/contact";
 import { Icon } from "../Common/Icon";
 import { ContactDetail } from "./ContactDetail";
-
-import styles from "./Contact.module.scss";
-
-interface ContactCardProps {
-	profileImage?: any;
-	name?: string;
-	title?: string;
-	email?: string;
-	phoneNumber?: string;
-	birthday?: string;
-	address?: string;
-}
 
 export const ContactCard = ({
 	profileImage,
@@ -34,7 +24,12 @@ export const ContactCard = ({
 }: ContactCardProps) => {
 	return (
 		<div className={styles.contactCard}>
-			<Image width={64} height={64} src={profileImage || avatar1_40} alt="avatar" />
+			<Image
+				width={64}
+				height={64}
+				src={profileImage || avatar1_40}
+				alt="avatar"
+			/>
 			<div className={styles.contactCard__main}>
 				<div className={styles.header}>
 					<div className={styles.header__contact}>

@@ -1,7 +1,6 @@
+import styles from "@/styles/Contact.module.scss";
 import Image from "next/image";
-import { ContactDetailProps } from "./Interface";
-
-import styles from "./Contact.module.scss";
+import { ContactDetailProps } from "../../types/contact";
 
 export const ContactDetail = ({ icon, title, details }: ContactDetailProps) => {
 	return (

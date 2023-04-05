@@ -1,7 +1,6 @@
+import styles from "@/styles/Common.module.scss";
+import { IconProps } from "@/types/common";
 import Image from "next/image";
-import { IconProps } from "./Interface";
-
-import styles from "./Common.module.scss";
 
 export const Icon = ({ image, alt }: IconProps) => {
 	return (

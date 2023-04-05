@@ -1,18 +1,8 @@
-import React from "react";
+import styles from "@/styles/Contact.module.scss";
 import Image from "next/image";
 import { avatar1_150 } from "../../../public/Avatars";
 import { more2 } from "../../../public/Icons";
-import styles from "./Contact.module.scss";
-
-interface ContactGridProps {
-	profileImage?: any;
-	name?: string;
-	title?: string;
-	email?: string;
-	phoneNumber?: string;
-	birthday?: string;
-	address?: string;
-}
+import { ContactGridProps } from "../../types/contact";
 
 export const ContactGrid = ({
 	profileImage,
@@ -30,17 +20,15 @@ export const ContactGrid = ({
 				src={profileImage || avatar1_150}
 				alt="avatar"
 			/>
-			<h4 className={styles.name}>
-				{name}
-			</h4>
+			<h4 className={styles.name}>{name}</h4>
 			<div className={styles.title}>
 				<p>{title}</p>
 			</div>
 			<p className={styles.details}>{email}</p>
 			<p className={styles.details}>{phoneNumber}</p>
-            <div className={styles.message}>
-                <p>Message</p>
-            </div>
+			<div className={styles.message}>
+				<p>Message</p>
+			</div>
 		</div>
 	);
 };

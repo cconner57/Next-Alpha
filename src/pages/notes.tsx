@@ -1,15 +1,36 @@
 import { Button } from "@/components/Common/Button";
+import { Modal } from "@/components/Common/Modal";
+import { NoteItem, ViewNote } from "@/components/Notes";
 import Image from "next/image";
+import { useState } from "react";
 import { filter3 } from "../../public/Icons";
-import { NoteItem } from "@/components/Notes/NoteItem";
+import { Note } from "../types/notes";
+import { notesData } from "../data/notes"
 
 const Notes = () => {
+	const [openModal, setOpenModal] = useState<boolean>(false);
+	const [notes, setNotes] = useState<Note[]>(notesData);
+	const [selectedNote, setSelectedNote] = useState<Note>({
+		content: "",
+		date: "",
+		id: 0,
+		pinned: false,
+		title: "",
+	});
+
+	const deleteNote = (note: Note) => {
+		console.log("deleted note");
+		setNotes(notes.filter((item) => item.id !== note.id));
+		setOpenModal(false);
+	};
+
 	return (
 		<main
 			style={{
 				backgroundColor: "#151517",
 				padding: "0 30px",
 				width: "90.5 vw",
+				position: "relative",
 			}}>
 			<div style={{ display: "flex", justifyContent: "space-between" }}>
 				<h2
@@ -48,23 +69,22 @@ const Notes = () => {
 					height: "70.4vh",
 					paddingBottom: "40px",
 				}}>
-				<NoteItem pinned={true} />
-				<NoteItem pinned={true} />
-				<NoteItem pinned={true} />
-				<NoteItem pinned={true} />
-				<NoteItem pinned={false} />
-				<NoteItem pinned={false} />
-				<NoteItem pinned={false} />
-				<NoteItem pinned={false} />
-				<NoteItem pinned={false} />
-				<NoteItem pinned={false} />
-				<NoteItem pinned={false} />
-				<NoteItem pinned={false} />
-				<NoteItem pinned={false} />
-				<NoteItem pinned={false} />
-				<NoteItem pinned={false} />
-				<NoteItem pinned={false} />
+				{notes.map((note: Note) => (
+					<NoteItem
+						key={note.id}
+						note={note}
+						toggleModal={() => setOpenModal(!openModal)}
+						focusedNote={() => setSelectedNote(note)}
+					/>
+				))}
 			</div>
+			<Modal closeModal={() => setOpenModal(!openModal)} openModal={openModal}>
+				<ViewNote
+					deleteNote={() => deleteNote(selectedNote)}
+					closeModal={() => setOpenModal(false)}
+					selectedNote={selectedNote}
+				/>
+			</Modal>
 		</main>
 	);
 };
