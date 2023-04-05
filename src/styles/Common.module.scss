@@ -153,9 +153,10 @@
 
 .page {
 	background-color: #151517;
-	padding: 0 30px;
-	width: 90.5vw;
+	padding: 0 30px 30px;
+	max-width: 94vw;
 	overflow: auto;
-	height: 88.2vh;
+	max-height: calc(100vh - 80px);
 	position: relative;
+	overflow: auto;
 }

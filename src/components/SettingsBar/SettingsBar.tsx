@@ -4,7 +4,7 @@ import {
 	arrowLeft, menu, notification, search2,
 	setting
 } from "../../../public/Icons";
-import styles from "./SettingsBar.module.scss";
+import styles from "@/styles/SettingsBar.module.scss";
 
 export const SettingsBar = () => {
 	return (

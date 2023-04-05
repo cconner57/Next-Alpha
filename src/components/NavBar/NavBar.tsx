@@ -14,7 +14,7 @@ import {
 	project2,
 	tasks3,
 } from "../../../public/Icons";
-import styles from "./NavBar.module.scss";
+import styles from "@/styles/NavBar.module.scss";
 
 export const NavBar = ({ currentTab, setCurrentTab }: NavBarProps) => {
 	const router = useRouter();

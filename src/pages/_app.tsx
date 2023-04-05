@@ -14,9 +14,15 @@ export default function App({ Component, pageProps }: AppProps) {
 
 	const [currentTab, setCurrentTab] = useState<TabState>("dashboard" as any);
 	return (
-		<div style={{ display: "flex", overflow: "hidden" }}>
+		<div style={{ display: "flex", overflow: "hidden", minWidth: "100vw" }}>
 			<NavBar currentTab={currentTab} setCurrentTab={setCurrentTab} />
-			<div style={{ display: "flex", flexDirection: "column" }}>
+			<div
+				style={{
+					display: "flex",
+					flexDirection: "column",
+					minWidth: "94.05vw",
+					maxHeight: "100vh",
+				}}>
 				<SettingsBar />
 				<Component {...pageProps} />
 			</div>

@@ -4,7 +4,8 @@
 	display: flex;
 	justify-content: space-between;
 	padding: 30px 29px;
-	width: 90.5vw;
+	max-width: 94vw;
+	max-height: 80px;
 	.actions {
 		align-items: center;
 		display: flex;
