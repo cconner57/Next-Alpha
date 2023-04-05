@@ -3,45 +3,21 @@ import { ToggleView } from "@/components/Common/ToggleView";
 import { ContactCard, ContactGrid } from "@/components/Contact";
 import { contactsData } from "@/data/contacts";
 import { useState } from "react";
+import styles from "../styles/Contacts.module.scss";
 
 const Contacts = () => {
 	const [viewToggle, setViewToggle] = useState<"grid" | "list">("grid");
 	return (
-		<main
-			style={{
-				backgroundColor: "#151517",
-				padding: "0 30px",
-				width: "90.5 vw",
-				overflow: "auto",
-				height: "88.2vh",
-			}}>
-			<div style={{ display: "flex", justifyContent: "space-between" }}>
-				<h2
-					style={{
-						fontFamily: "Nunito",
-						fontStyle: "normal",
-						fontWeight: "700",
-						fontSize: "32px",
-						lineHeight: "44px",
-						display: "flex",
-						alignItems: "center",
-						color: "#FFFFFF",
-						margin: "32px 0",
-					}}>
-					Contacts
-				</h2>
-				<div style={{ display: "flex", gap: "16px", margin: "30px" }}>
+		<main className={styles.contactsPage}>
+			<div className={styles.header} style={{}}>
+				<h2>Contacts</h2>
+				<div className={styles.actions}>
 					<ToggleView viewToggle={viewToggle} setViewToggle={setViewToggle} />
 					<Button variant="primary" text="+ Add Contact" />
 				</div>
 			</div>
 			{viewToggle === "grid" && (
-				<div
-					style={{
-						display: "grid",
-						gridTemplateColumns: "repeat(4, 1fr)",
-						gridGap: "20px",
-					}}>
+				<div className={styles.bodyGrid}>
 					{contactsData.map((contact) => (
 						<ContactGrid
 							key={contact.id}

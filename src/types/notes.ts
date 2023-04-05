@@ -15,5 +15,11 @@ export interface NoteItemProps {
 export interface ViewNoteProps {
 	deleteNote: () => void;
 	closeModal: () => void;
-    selectedNote: Note;
+	selectedNote: Note;
+}
+
+export interface NoteModal {
+	viewNote: boolean;
+	addNote: boolean;
+	editNote: boolean;
 }

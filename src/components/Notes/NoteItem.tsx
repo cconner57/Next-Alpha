@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { calendar, pushpin } from "../../../public/Icons";
 import { NoteItemProps } from "@/types/notes";
-import styles from "../../styles/Note.module.scss";
+import styles from "../../styles/Notes.module.scss";
 
 export const NoteItem = ({
 	note: { date, pinned, title, content },

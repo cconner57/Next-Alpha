@@ -1,4 +1,4 @@
-import styles from "@/styles/Contact.module.scss";
+import styles from "@/styles/Contacts.module.scss";
 import Image from "next/image";
 import { avatar1_40 } from "../../../public/Avatars";
 import {
