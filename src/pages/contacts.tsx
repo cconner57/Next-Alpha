@@ -12,6 +12,8 @@ const Contacts = () => {
 				backgroundColor: "#151517",
 				padding: "0 30px",
 				width: "90.5 vw",
+				overflow: "auto",
+				height: "88.2vh",
 			}}>
 			<div style={{ display: "flex", justifyContent: "space-between" }}>
 				<h2

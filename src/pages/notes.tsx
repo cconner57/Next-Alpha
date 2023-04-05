@@ -4,7 +4,7 @@ import { NoteItem, ViewNote } from "@/components/Notes";
 import Image from "next/image";
 import { useState } from "react";
 import { filter3 } from "../../public/Icons";
-import { Note } from "../types/notes";
+import { Note } from "@/types/notes";
 import { notesData } from "../data/notes"
 
 const Notes = () => {

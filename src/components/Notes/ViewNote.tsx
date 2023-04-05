@@ -1,4 +1,4 @@
-import styles from "@/styles/Notes.module.scss";
+import styles from "../../styles/Note.module.scss";
 import Image from "next/image";
 import {
 	alignLeft,
