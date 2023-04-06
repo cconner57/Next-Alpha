@@ -38,8 +38,16 @@ import alignLeft from "./Align-Left.svg";
 import x from "./X.svg";
 import deleteIcon from "./Delete.svg";
 import edit from "./Edit.svg";
+import attachment from "./Attachment.svg";
+import attachment2 from "./Attachment2.svg";
+import time from "./Time.svg";
+import time2 from "./Time2.svg";
 
 export {
+	time,
+	time2,
+	attachment,
+	attachment2,
 	x,
 	deleteIcon,
 	edit,
