@@ -104,6 +104,11 @@
 				width: 100%;
 				background: #38383b;
 				border-radius: 4px;
+				.activebar {
+					background: #31d482;
+					border-radius: 4px;
+					height: 6px;
+				}
 			}
 		}
 		.footer {
