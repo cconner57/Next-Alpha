@@ -29,7 +29,7 @@ export const projectsData: ProjectGridItemProps[] = [
 		completedTask: 5,
 		messages: 10,
 		attachments: 5,
-		dueDate: "2021-05-05",
+		dueDate: "2023-03-05",
 		status: "started",
 	},
 	{
@@ -54,7 +54,7 @@ export const projectsData: ProjectGridItemProps[] = [
 		completedTask: 18,
 		messages: 3,
 		attachments: 2,
-		dueDate: "2021-05-05",
+		dueDate: "2023-04-15",
 		status: "started",
 	},
 	{
@@ -85,7 +85,7 @@ export const projectsData: ProjectGridItemProps[] = [
 		completedTask: 10,
 		messages: 14,
 		attachments: 1,
-		dueDate: "2021-05-05",
+		dueDate: "2023-05-05",
 		status: "completed",
 	},
 	{
@@ -110,7 +110,7 @@ export const projectsData: ProjectGridItemProps[] = [
 		completedTask: 15,
 		messages: 53,
 		attachments: 1,
-		dueDate: "2021-05-05",
+		dueDate: "2023-06-05",
 		status: "on hold",
 	},
 	{

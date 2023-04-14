@@ -25,7 +25,7 @@
 	grid-template-columns: repeat(3, 1fr);
 	width: 1110px;
 	grid-gap: 30px;
-	margin-top: 30px;
+	margin: 30px 0 80px;
 	.projectItem {
 		width: 302px;
 		height: 352px;
@@ -36,6 +36,7 @@
 		padding: 24px;
 		flex-direction: column;
 		align-items: center;
+		cursor: pointer;
 		& > img {
 			margin-left: auto;
 		}
@@ -136,7 +137,6 @@
 				display: flex;
 				gap: 6px;
 				padding: 7px;
-				background: #38383b;
 				border-radius: 10px;
 				width: 106px;
 				height: 27px;
@@ -148,9 +148,34 @@
 					font-weight: 400;
 					font-size: 14px;
 					line-height: 19px;
-					color: #ffffff;
+				}
+			}
+			.valid {
+				background: hsl(240, 3%, 23%);
+				p {
+					color: hsl(0, 0%, 100%);
+				}
+			}
+			.warning {
+				background: hsla(61, 100%, 50%, 0.12);
+				p {
+					color: hsl(61, 100%, 50%);
+				}
+			}
+			.expired {
+				background: hsla(12, 100%, 63%, 0.12);
+				p {
+					color: hsl(5, 79%, 58%);
 				}
 			}
 		}
 	}
+}
+
+.filter {
+	padding: 14px;
+	border: 1px solid #232324;
+	border-radius: 14px;
+	cursor: pointer;
+	max-height: 48px;
 }

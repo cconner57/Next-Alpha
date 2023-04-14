@@ -26,6 +26,7 @@ export const ProjectGridItem = ({
 		completedTask,
 		messages,
 		attachments,
+		dueDate,
 	},
 }: {
 	item: ProjectGridItemProps;
@@ -61,6 +62,25 @@ export const ProjectGridItem = ({
 	};
 
 	const completedTaskPercent = (completedTask / totalTask) * 100;
+
+	const generateDueDate = () => {
+		const currentDate = new Date();
+		const itemDueDate = new Date(dueDate);
+
+		const differenceInTime = itemDueDate.getTime() - currentDate.getTime();
+		const totalDays = Math.ceil(differenceInTime / (1000 * 3600 * 24));
+
+		if (totalDays > 30) {
+			return [`${Math.ceil(totalDays / 30)} months`, styles.valid];
+		}
+		if (totalDays < 30 && totalDays > 7) {
+			return [`${Math.ceil(totalDays / 7)} weeks`, styles.valid];
+		}
+		if (totalDays <= 7 && totalDays > 0) {
+			return [`${totalDays} days`, styles.warning];
+		}
+		return ["0 days", styles.expired];
+	};
 
 	return (
 		<div className={styles.projectItem}>
@@ -100,9 +120,9 @@ export const ProjectGridItem = ({
 					<Image width={20} height={20} src={attachment2} alt="attachment" />
 					<p>{attachments}</p>
 				</div>
-				<div className={styles.duration}>
+				<div className={`${styles.duration} ${generateDueDate()[1]}`}>
 					<Image width={20} height={20} src={time2} alt="time" />
-					<p>1 week left</p>
+					<p>{generateDueDate()[0]}</p>
 				</div>
 			</div>
 		</div>

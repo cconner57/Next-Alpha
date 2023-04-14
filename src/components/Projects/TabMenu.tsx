@@ -1,40 +1,56 @@
 import React from "react";
 import styles from "@/styles/Projects.module.scss";
-import { tabMenu } from "@/types/projects";
+import { tabMenu, ProjectGridItemProps } from "@/types/projects";
 
 interface TabMenuProps {
 	selectedTab: tabMenu;
 	setSelectedTab: (tab: tabMenu) => void;
+	projects: ProjectGridItemProps[];
 }
 
-export const TabMenu = ({ selectedTab, setSelectedTab }: TabMenuProps) => {
+export const TabMenu = ({
+	selectedTab,
+	setSelectedTab,
+	projects,
+}: TabMenuProps) => {
 	return (
 		<div className={styles.tabMenu}>
 			<p
-				className={selectedTab === ("All" as any) ? styles.active : undefined}
-				onClick={() => setSelectedTab("All" as any)}>
-				All (151)
+				className={
+					selectedTab === ("All" as unknown as tabMenu)
+						? styles.active
+						: undefined
+				}
+				onClick={() => setSelectedTab("All" as unknown as tabMenu)}>
+				All ({projects.length})
 			</p>
 			<p
 				className={
-					selectedTab === ("Started" as any) ? styles.active : undefined
+					selectedTab === ("Started" as unknown as tabMenu)
+						? styles.active
+						: undefined
 				}
-				onClick={() => setSelectedTab("Started" as any)}>
-				Started (128)
+				onClick={() => setSelectedTab("Started" as unknown as tabMenu)}>
+				Started ({projects.filter((item) => item.status === "started").length})
 			</p>
 			<p
 				className={
-					selectedTab === ("On Hold" as any) ? styles.active : undefined
+					selectedTab === ("On Hold" as unknown as tabMenu)
+						? styles.active
+						: undefined
 				}
-				onClick={() => setSelectedTab("On Hold" as any)}>
-				On Hold (15)
+				onClick={() => setSelectedTab("On Hold" as unknown as tabMenu)}>
+				On Hold ({projects.filter((item) => item.status === "on hold").length})
 			</p>
 			<p
 				className={
-					selectedTab === ("Completed" as any) ? styles.active : undefined
+					selectedTab === ("Completed" as unknown as tabMenu)
+						? styles.active
+						: undefined
 				}
-				onClick={() => setSelectedTab("Completed" as any)}>
-				Completed (8)
+				onClick={() => setSelectedTab("Completed" as unknown as tabMenu)}>
+				Completed (
+				{projects.filter((item) => item.status === "completed").length})
 			</p>
 		</div>
 	);
