@@ -42,8 +42,16 @@ import attachment from "./Attachment.svg";
 import attachment2 from "./Attachment2.svg";
 import time from "./Time.svg";
 import time2 from "./Time2.svg";
+import profile from "./Profile.svg";
+import lock from "./Lock.svg";
+import logout from "./Logout.svg";
+import logout2 from "./Logout2.svg";
 
 export {
+	logout,
+	logout2,
+	lock,
+	profile,
 	time,
 	time2,
 	attachment,
