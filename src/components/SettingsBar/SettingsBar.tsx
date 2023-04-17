@@ -21,7 +21,7 @@ export const SettingsBar = () => {
 	return (
 		<div
 			className={styles.settingsBar}
-			onMouseLeave={() => setToggleSettingsModal(!toggleSettingsModal)}>
+			onMouseLeave={() => setToggleSettingsModal(false)}>
 			<div className={styles.search}>
 				<div className={styles.navToggle}>
 					<Image width={20} height={20} src={arrowLeft} alt="avatar" />
