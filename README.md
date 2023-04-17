@@ -1,6 +1,6 @@
 # Next-Alpha
 
-![Next-Alpha Logo](https://github.com/cconner57/Next-Alpha/blob/main/next-alpha-logo.png)
+![Visualization of the codebase](./diagram.svg)
 
 Next-Alpha is a web application built on the Next.js framework that provides users with financial information and analysis tools. The application is designed to be intuitive and user-friendly, with a modern and responsive UI.
 
@@ -51,5 +51,3 @@ Please make sure to update tests as appropriate.
 ## License
 
 Next-Alpha is licensed under the [MIT License](https://opensource.org/licenses/MIT). See `LICENSE` for more information.
-
-![Visualization of the codebase](./diagram.svg)
