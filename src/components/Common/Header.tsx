@@ -1,8 +1,8 @@
 import { Button } from "@/components/Common/Button";
 import styles from "@/styles/Common.module.scss";
-import { HeaderProps } from "@/types/common";
+import { IHeader } from "@/types/common";
 
-export const Header = ({ title, children, buttonText }: HeaderProps) => {
+export const Header = ({ title, children, buttonText }: IHeader) => {
 	return (
 		<div className={styles.header}>
 			<h2>{title}</h2>

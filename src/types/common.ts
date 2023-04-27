@@ -1,31 +1,31 @@
-export interface IconProps {
+export interface IIcon {
 	image: any;
 	alt: string;
 }
 
-export interface ModalProps {
+export interface IModal {
 	openModal: boolean;
 	closeModal: () => void;
 	children: React.ReactNode;
 }
 
-export interface ToggleViewProps {
+export interface IToggleView {
 	viewToggle: string;
 	setViewToggle: (view: "grid" | "list") => void;
 }
 
-export interface ButtonProps {
+export interface IButton {
 	text: string;
 	variant: "primary" | "secondary";
 	size?: "small" | "medium" | "large";
 }
 
-export interface HeaderProps {
+export interface IHeader {
 	title: string;
 	buttonText: string;
-	children: React.ReactNode;
+	children?: React.ReactNode;
 }
 
-export interface PageProps {
+export interface IPage {
     children: React.ReactNode;
 }

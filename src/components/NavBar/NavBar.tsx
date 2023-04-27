@@ -13,7 +13,9 @@ import {
 	notes,
 	project2,
 	tasks3,
+	plus,
 } from "../../../public/Icons";
+import { calendarData } from "@/data/calendar";
 import styles from "@/styles/NavBar.module.scss";
 
 export const NavBar = ({ currentTab, setCurrentTab }: NavBarProps) => {
@@ -116,6 +118,24 @@ export const NavBar = ({ currentTab, setCurrentTab }: NavBarProps) => {
 					alt="contacts"
 				/>
 			</div>
+			{currentTab === ("calendar" as any) && (
+				<div className={styles.calendar}>
+					{calendarData.map((item) => (
+						<div
+							key={item.id}
+							className={styles.calendar__item}
+							style={{ backgroundColor: item.color }}
+						/>
+					))}
+					<Image
+						onClick={() => changeRoutes("contacts" as any)}
+						width={20}
+						height={20}
+						src={plus}
+						alt="add calendar"
+					/>
+				</div>
+			)}
 		</div>
 	);
 };

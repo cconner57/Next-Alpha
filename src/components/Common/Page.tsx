@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "@/styles/Common.module.scss";
-import { PageProps } from "@/types/common";
+import { IPage } from "@/types/common";
 
-export const Page = ({ children }: PageProps) => {
+export const Page = ({ children }: IPage) => {
 	return <main className={styles.page}>{children}</main>;
 };

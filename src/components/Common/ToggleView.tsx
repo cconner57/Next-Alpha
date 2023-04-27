@@ -1,9 +1,9 @@
 import styles from "@/styles/Common.module.scss";
-import { ToggleViewProps } from "@/types/common";
+import { IToggleView } from "@/types/common";
 import Image from "next/image";
 import { grid, list2 } from "../../../public/Icons";
 
-export const ToggleView = ({ viewToggle, setViewToggle }: ToggleViewProps) => {
+export const ToggleView = ({ viewToggle, setViewToggle }: IToggleView) => {
 	return (
 		<div className={styles.toggleView}>
 			<div
